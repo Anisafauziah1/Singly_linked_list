@@ -127,7 +127,7 @@ namespace Singly_linked_list
                     Console.WriteLine("5. EXIT");
                     Console.Write("\nEnter your choice (1-5) : ");
                     char ch = Convert.ToChar(Console.ReadLine());
-                    switch(ch)
+                    switch (ch)
                     {
                         case '1':
                             {
@@ -137,7 +137,7 @@ namespace Singly_linked_list
 
                         case '2':
                             {
-                                if(obj.ListEmpty())
+                                if (obj.ListEmpty())
                                 {
                                     Console.WriteLine("\nList is empty");
                                     break;
@@ -151,7 +151,7 @@ namespace Singly_linked_list
                                 else
                                     Console.WriteLine("Record with roll number " +
 
-                                        + rollNo + " Deleted ");
+                                        +rollNo + " Deleted ");
                             }
                             break;
                         case '3':
@@ -183,17 +183,18 @@ namespace Singly_linked_list
                             break;
                         case '5':
                             return;
-                        default;
+                        default:
                             {
                                 Console.WriteLine("\nInvalid");
                                 break;
                             }
                     }
                 }
-                catch(Exception)
+                catch (Exception)
                 {
-                    Console.WriteLine("\nCheck for the value enterd ");
+                    Console.WriteLine("\nCheck for the value enterd  ");
                 }
+            }
         }
     }
 }
