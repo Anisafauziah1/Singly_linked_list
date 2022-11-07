@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,9 +34,9 @@ namespace Singly_linked_list
             newnode.rollNumber = rollNo;
             newnode.name = nm;
             // if the node to be inserted is the first node
-            if(START == null || rollNo <= START.rollNumber)
+            if (START == null || rollNo <= START.rollNumber)
             {
-                if((START != null) &&(rollNo == START.rollNumber))
+                if ((START != null) && (rollNo == START.rollNumber))
                 {
                     Console.WriteLine();
                     return;
@@ -43,9 +45,9 @@ namespace Singly_linked_list
                 previous = START;
                 current = START;
 
-                while ((current != null)&&(rollNo >= current.rollNumber))
+                while ((current != null) && (rollNo >= current.rollNumber))
                 {
-                    if(rollNo == current.rollNumber)
+                    if (rollNo == current.rollNumber)
                     {
                         Console.WriteLine();
                         return;
@@ -56,8 +58,21 @@ namespace Singly_linked_list
                 }
                 newnode.next = current;
                 previous.next = newnode;
-                
+
             }
+
+            
+        }
+        public bool delNode(int rollNo)
+        {
+            Node previous, current;
+            previous = current = null;
+            if (Search(rollNo, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
         }
     }
     class Program
