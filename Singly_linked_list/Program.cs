@@ -102,6 +102,13 @@ namespace Singly_linked_list
                         + currentNode.name + "\n");
             }
         }
+        public bool ListEmpty()
+        {
+            if (START == null)
+                return true;
+            else
+                return false;
+        }
     }
     class Program
     {
