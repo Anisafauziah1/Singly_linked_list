@@ -154,6 +154,11 @@ namespace Singly_linked_list
                                         + rollNo + " Deleted ");
                             }
                             break;
+                        case '3':
+                            {
+                                obj.Traverse();
+                            }
+                            break;
                     }
                 }
         }
